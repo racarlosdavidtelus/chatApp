@@ -1,0 +1,108 @@
+[
+  {
+    "active": "true",
+    "imgSrc": "specs/1.png",
+    "cardTitle": "1. Running the app",
+    "cardText": "<p>In the image you see an <a href=\"https://expressjs.com/\" target=\"blank\">Express</a> app running from a <a href=\"https://code.visualstudio.com/\" target=\"blank\">VSCode</a> terminal with a launch configuration file. <a href=\"https://nodemon.io/\" target=\"blank\">Nodemon,</a> is used in this case, although this is optional.</p><p>In the following slides you will see images of the actual desired app, a version of it. It is not expected that your solution looks exactly like that, but what <b>is</b> expected is that all the specified functionality is in place. Please reach out to your instructor if you have any doubts.</p>"
+  },
+  {
+    "imgSrc": "specs/2.png",
+    "cardTitle": "2. Landing in the home page",
+    "cardText": "<p>Upon navigating to the home page, you should arrive to an interface that looks something like the above, which relies heavily in <a href=\"https://ejs.co/\" target=\"blank\">EJS</a> templating and <a href=\"https://getbootstrap.com/\" target=\"blank\">Bootstrap</a>.</p><p>You have the final word on the layout, though. Keep in mind the main functional aspects: identifying the user (with a default name), and providing a means to send messages.</p>"
+  },
+  {
+    "imgSrc": "specs/3.png",
+    "cardTitle": "3. Second login",
+    "cardText": "<p>If you navigate to the same address in another window, browser, tab or even device, you have to arrive to the same UI, with a different user name generated for it.</p><p>Notice that this example shows on the top the default user name assigned to each new &quotlogin&quot. The example sets it to &quotUser&quot followed by a number indicating the quantity of users that have logged into the chat app during its life in memory.</p><p>You are <b>not</b> expected to keep track of any information in between app restarts, it's beyond the scope of this course.</p>"
+  },
+  {
+    "imgSrc": "specs/4.png",
+    "cardTitle": "4. Server side logs",
+    "cardText": "<p>No information needs to be kept between application restarts. You do, however, need to keep track of how many users have logged in (by going to the home page) and how many users are currently active (still in the home page without refreshing or losing connection).</p><p>To this purpose, the picture shows the server side logs whenever a new connection is made.</p>"
+  },
+  {
+    "imgSrc": "specs/5.png",
+    "cardTitle": "5. User input",
+    "cardText": "<p>Keeping in mind that you have all the creative freedom for the layout specifics, the picture above does show one of the <b>required</b> features. You <i>need to</i> make an input method available within the UI. For the example, a form and text input is used. See the button to the right, the one in charge of actually submitting the text. You may also add functionality so that pressing ENTER submits the text too!</p>"
+  },
+  {
+    "imgSrc": "specs/6.png",
+    "cardTitle": "6. Message broadcast",
+    "cardText": "<p>The <b>most important</b> functionality of the app is shown in the picture. Whenever a message is submitted by one logged in user, it is <i>broadcasted</i> to the rest of logged in users.</p><p>This is done via socket usage. Specifically, the <a href=\"https://socket.io/\" target=\"blank\">socket.io</a> library is used for the example above. Go to the site, there is an example app which pretty much handles everything, in the <a href=\"https://socket.io/get-started/chat\" target=\"blank\">gettting started</a> section.</p><p>Notice how each message indicates which user sent it. Own messages show the author as &quotMe:&quot in each user's window.</p>"
+  },
+  {
+    "imgSrc": "specs/7.png",
+    "cardTitle": "7. Second user input",
+    "cardText": "<p>Not much new here. The image showcases the second user, in the second window to the right, writing a message in the designated input for that.</p>"
+  },
+  {
+    "imgSrc": "specs/8.png",
+    "cardTitle": "8. Second user's message broadcast",
+    "cardText": "<p>When the second user broadcasts their message by submitting it, it will appear in both the first and the sencond user's screens. Notice a key thing here: the layout eases differentiating where one message ends and the other begins, by having an <i>alternating color pattern</i> to mark the contrast."
+  },
+  {
+    "imgSrc": "specs/9.png",
+    "cardTitle": "9. A third user joins the party",
+    "cardText": "<p>In the above image, a third user has joined the chat (albeit in the same computer). <u>It is expected that you configure Express so that other devices within your local network access the same chat instance and you can chat with them, seeing all messages broadcasted as shown in previous slides.</u></p>"
+  },
+  {
+    "imgSrc": "specs/10.png",
+    "cardTitle": "10. Message history",
+    "cardText": "<p>Notice how the messages shown in the third user's screen are not all the same than the other two, more veteran, users. This is due to another spec <b>required</b> in the final app: only the messages from the moment a user joins are added to their message history. The other users who joined first still see the messages from before the third user joined, though.</p><p>The objective of this spec is for you to demonstrate that you can create elements within your UI code as needed, customizing their style.</p>"
+  },
+  {
+    "imgSrc": "specs/11.png",
+    "cardTitle": "11. Changing the user name introduction",
+    "cardText": "<p>In the sample app above, hovering over the user name at the top shows the message <i>&quotChange username&quot</i>. Being able to change the user name is a <b>required</b> feature of the app.</p><p>In the following slides you will see an example of this. However, as with other aspects of the program, the specifics of how that feature is implemented, are up to you.</p><p>The main idea is: a user should be able to change the name displayed for them, which is also the bold signature that will appear for their broadcasted messages in other users' screens.</p><p></p>"
+  },
+  {
+    "imgSrc": "specs/12.png",
+    "cardTitle": "12. Change user name modal",
+    "cardText": "<p>Upon clicking in the user name as shown in the previous slide, a modal appears, so that the user may input their new name. In the example above, &quotThree&quot is the value entered, and then submitted.</p>"
+  },
+  {
+    "imgSrc": "specs/13.png",
+    "cardTitle": "13. New user name is used as signature",
+    "cardText": "<p>The image shows the effects of the user changing their name. As shown, all future messages now will be published with the new name as signature. However, in the user's screen, their own messages continue to appear with the signature &quotMe:&quot.</p><p></p><p></p><p></p>"
+  },
+  {
+    "imgSrc": "specs/14.png",
+    "cardTitle": "14. Second user refreshed their browser",
+    "cardText": "<p>Now another set of specs are showcased by refreshing the window of the user that was named &quotUser 2&quot, the middle window. The first thing to notice is that the name at the top now reads &quotUser 4&quot. Why? Because for the app the User 2 terminated the connection, which logged it off, and when the new request was made, it is recognized as a new login. The user gets assigned a default name, which for the test app will be &quotUser 4&quot.</p><p>You may change details around the specifics. The main idea is that <i>no user data is stored in the browser, nor on the server side.</i></p>"
+  },
+  {
+    "imgSrc": "specs/15.png",
+    "cardTitle": "15. Backend logs of the previous slide",
+    "cardText": "<p>When the user formerly named &quotUser 2&quot refreshed their browser, a few things happenned. The first being that the socket connection between the browser and the backend application was interrupted. There are many ways to handle this, but for the sake of this excercise, this is interpreted as the user logging off from the app entirely. Since no data is stored either in the browser nor on the server side, this effectively means that there is no way of logging in again.</p>However, since the refresh action sends a new GET request, the backend interprets this as a new user logging in, and outputs it as shown in the above image.<p></p><p>Finally, the newly logged in user gets assigned the default user name, comprised of &quotUser&quot followed by the number of login that the action represented.</p><p></p>"
+  },
+  {
+    "imgSrc": "specs/16.png",
+    "cardTitle": "16. Swagger UI",
+    "cardText": "<p>What is presented now is another <b>required</b> feature of the final app you will present.</p><p>This UI is generated using <a href=\"https://swagger.io/\" target=\"blank\">Swagger</a>. Read the <a href=\"https://swagger.io/tools/swagger-ui/\" target=\"blank\">docs</a> on how to implement it in this, your Express application.</p><p>The <u>two required endpoints</u> will do a GET and a DELETE request. With the GET you need to implement a backend response with all the messages in the app history since startup. With the DELETE request you need to clear the history both in the backend and on the client's screens. More is shown in the next couple of slides...</p>"
+  },
+  {
+    "imgSrc": "specs/17.png",
+    "cardTitle": "17. Get endpoint in Swagger",
+    "cardText": "<p>Above is an example of the GET request implementation using Swagger. You will need to create it as such, allowing a user to visit the Swagger documentation endpoint of your app and clicking on the GET request to show the corresponding options and &quottry it out&quot button.</p><p>When the request is successful, the response body will be written in the area below, as shown in the picture.</p>"
+  },
+  {
+    "imgSrc": "specs/18.png",
+    "cardTitle": "18. Delete endpoint in Swagger",
+    "cardText": "<p>Now the image shows the implementation of the DELETE request. When it is successful it will delete all messages in the server side's memory.</p><p>As you see, the main objective of the Swagger implementation is to expose the functionality in a standardized way, which will come in handy in all your future projects.</p>"
+  },
+  {
+    "imgSrc": "specs/19.png",
+    "cardTitle": "19. Get after the delete request",
+    "cardText": "<p>Just to further clarify the implementation details, a new GET request is shown, using Swagger again.</p><p>As you can see, the message history is now empty. In the next slide you will see what happens with the frontend.</p>"
+  },
+  {
+    "imgSrc": "specs/20.png",
+    "cardTitle": "20. Effect of the delete request on the frontend",
+    "cardText": "<p>As for the frontend, when a successful request is made to the delete endpoint, the server should broadcast to the frontend that it needs to clear the message history for all logged in users, as shown in the image above.</p>"
+  },
+  {
+    "imgSrc": "specs/21.png",
+    "cardTitle": "21.JEST unit testing",
+    "cardText": "<p>Finally, the last <b>required</b> part of this small project is unit testing. You are required to use the <a href=\"https://jestjs.io/\" target=\"blank\">JEST library</a>.</p><p>You will need to structure your application so that you may isolate some logic in a testable module. Then you need to run such testing and show logs similar to the ones in the image.</p><p>As always, if you need help or run into any sort of blocker, you can reach out to your instructor for clarification, hints, and whatever may be needed for you to successfully complete this assignment.</p><p>Have a great time!</p>"
+  }
+]
