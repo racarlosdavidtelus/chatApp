@@ -22,9 +22,15 @@ function ModalLogin() {
         context_userUpdate(data)
         setName('');
         handleClose()
-        console.log(data)
+        toast.success('User added to chat room', {
+          onClose: () => {
+            history.replace("/chat")
+          }
+        })
+        //console.log(data)
 
-        //aqui hago el fetch POST para guardar el pokemon al usuario
+        //aqui hago el fetch POST para guardar al usuario
+        /*
         fetch(`${config.BACKEND}/user`, {
             method: "POST",
             body: JSON.stringify(data),
@@ -43,12 +49,13 @@ function ModalLogin() {
                   }
                 })
             }else{
-                toast.error(data.msj)
+                toast.error(data.msg)
             }
         })
         .catch(error => {
             console.log(error)
         })
+        */
     }
 
     const handleInputChange = (event) => {
@@ -58,7 +65,7 @@ function ModalLogin() {
     return (
       <>
         <button type="button" className="btn btn-light" onClick={handleShow}>
-        Chat <i className="bi bi-chat-dots"></i>
+          Start Chating <i className="bi bi-chat-dots"></i>
         </button>
   
         <Modal show={show} onHide={handleClose}>

@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000"
+      "url": "http://localhost:2000"
     }
   ],
   "paths": {
@@ -21,7 +21,7 @@
         },
         "servers": [
           {
-            "url": "http://localhost:3000"
+            "url": "http://localhost:2000"
           }
         ]
       },
@@ -34,13 +34,13 @@
         },
         "servers": [
           {
-            "url": "http://localhost:3000"
+            "url": "http://localhost:2000"
           }
         ]
       },
       "servers": [
         {
-          "url": "http://localhost:3000"
+          "url": "http://localhost:2000"
         }
       ]
     }

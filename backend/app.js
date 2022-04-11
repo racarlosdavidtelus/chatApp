@@ -27,45 +27,13 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/src/views/index.html');
 });
 
-app.get("/user",(req,res) =>{
-  res.status(200).send({data: content, error: null})
-})
-
-app.post("/user",(req,res) =>{
-  lastId++;
-  const {task} = req.body; console.log(req.body)
-  const new_task = { id:lastId, status:'todo', task}
-  content.push(new_task)
-  //console.log("task added: ",content)
-  res.status(200).send({data: content, error: null})
-})
-
 app.get("/messages",(req,res) =>{
   res.status(200).send(messages)
 })
 
-app.put("/tasks/:id",(req,res) =>{
-  const id = parseInt(req.params.id,10); 
-  const task = content.find(p => p.id == id);
-  if (!task) {
-    res.status(404).send({data: content, error: "Task id dont exist"})
-  }else{
-    const index = content.indexOf(task);
-    content[index] = {...task,...req.body};
-    res.status(200).send({data: content, error: null})
-  }
-})
-
-app.delete("/tasks/:id",(req,res) =>{ 
-  //console.log(req.params)
-  const id = parseInt(req.params.id,10);
-  const task = content.find(p => p.id == id);
-  if (!task) {
-      res.status(404).send({data: content, error: "Task id dont exist"})
-  }else{
-      content = content.filter(x => x != task)
-      res.status(200).send({data: content, error: null})
-  }
+app.delete("/messages",(req,res) =>{ 
+  messages = [];
+  res.status(200).send({msg: "Messages delete"})
 })
 
 io.on('connection', (socket) => {
@@ -93,3 +61,5 @@ io.on('connection', (socket) => {
 http.listen(2000, () => {
   console.log("Listening on port 2000");
 });
+
+module.exports = app;

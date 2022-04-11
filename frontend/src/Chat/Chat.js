@@ -16,12 +16,14 @@ const Chat = () => {
 
     
     useEffect(() => {
-        const shortName = uniqueNamesGenerator({
-            dictionaries: [adjectives, animals, colors], 
-            length: 2
-        }); 
-        const data = {name: shortName }
-        context_userUpdate(data)
+        if (context_user.name === '' || context_user.name === undefined) {
+            const shortName = uniqueNamesGenerator({
+                dictionaries: [adjectives, animals, colors], 
+                length: 2
+            }); 
+            const data = {name: shortName }
+            context_userUpdate(data)
+        }
     },[]);
 
     useEffect(() => {
@@ -49,7 +51,6 @@ const Chat = () => {
             <NavbarDashboard></NavbarDashboard>
             <br></br>
             <div className="d-flex justify-content-center">
-               
                     <main className="container">
                         <ul id="messages">
                         { messages.map((item,index) => (   
@@ -62,8 +63,6 @@ const Chat = () => {
                             <button>Send</button>
                         </form>
                     </main>
-
-               
             </div>
         </>
     )

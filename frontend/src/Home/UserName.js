@@ -22,11 +22,9 @@ function UserName() {
         context_userUpdate(data)
         setName('');
         handleClose()
-        toast.success('User name changed...')
-        //console.log(data)
+        console.log(data)
 
-        //aqui hago el fetch POST para guardar al usuario
-        /*
+        //aqui hago el fetch POST para guardar el pokemon al usuario
         fetch(`${config.BACKEND}/user`, {
             method: "POST",
             body: JSON.stringify(data),
@@ -40,7 +38,10 @@ function UserName() {
         .then(data => { 
             if (data.error == null) {
                 toast.success('User name changed...', {
-                
+                  /*
+                  onClose: () => {
+                    history.replace("/chat")
+                  }*/
                 })
             }else{
                 toast.error(data.msj)
@@ -49,7 +50,6 @@ function UserName() {
         .catch(error => {
             console.log(error)
         })
-        */
     }
 
     const handleInputChange = (event) => {

@@ -3,16 +3,11 @@ import UserName from "./UserName";
 
 const Navbar = () => {
 
-
     const history = useHistory();
-
-   
 
     const onLogOut = (event) => {
         history.replace("/")
     }
-
-    
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -25,7 +20,6 @@ const Navbar = () => {
                 <li className="nav-item">
                     <UserName></UserName>
                 </li>
-           
             </ul>
         </div>
         <button className="btn btn-light" onClick={onLogOut}><i className="bi bi-x-circle"></i></button>
