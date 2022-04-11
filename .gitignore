@@ -1,0 +1,5 @@
+node_modules/
+system-integrations-week-2-starter-develop
+# System Files
+.DS_Store
+Thumbs.db

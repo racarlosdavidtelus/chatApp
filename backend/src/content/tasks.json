@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "status": "todo",
+    "task": "Make the todo app"
+  },
+  {
+    "id": "2",
+    "status": "todo",
+    "task": "Watch the videos of http"
+  },
+  {
+    "id": "3",
+    "status": "todo",
+    "task": "Make bootcamp apps"
+  }
+]
