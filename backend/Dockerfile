@@ -1,7 +1,6 @@
 FROM node:16-alpine
-WORKDIR /backendUrlShortener
+WORKDIR /backendChatxs
 COPY . .
-RUN npm install 
-ENV HOST default   
-EXPOSE 3000
+RUN npm install  
+EXPOSE 2000
 CMD ["npm","start"]
