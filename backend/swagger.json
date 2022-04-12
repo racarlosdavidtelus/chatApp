@@ -3,7 +3,7 @@
   "info": {
     "title": "DSU Chat",
     "description": "Chat app with socket.io",
-    "version": "0.0.1"
+    "version": "0.1"
   },
   "servers": [
     {
@@ -13,23 +13,38 @@
   "paths": {
     "/messages": {
       "get": {
-        "description": "Get all messages in memory.",
+        "description": "Chat app with socket.io",
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Get messages in memory",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/messages"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "bad input parameter"
           }
-        },
-        "servers": [
-          {
-            "url": "http://localhost:2000"
-          }
-        ]
+        }
       },
       "delete": {
-        "description": "Delete all messages in memory.",
+        "description": "Auto generated using Swagger Inspector",
         "responses": {
           "200": {
-            "description": "Messages deleted successfully."
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json;": {
+                "schema": {
+                  "type": "array"
+                }
+              }
+            }
           }
         },
         "servers": [
@@ -45,5 +60,43 @@
       ]
     }
   },
-  "components": {}
+  "components": {
+    "schemas": {
+      "messages": {
+        "type": "array",
+        "example": [
+          {
+            "userName": "Carlos David",
+            "message": "hola"
+          },
+          {
+            "userName": "Miles Morales",
+            "message": "hola, Carlos"
+          },
+          {
+            "userName": "Carlos David",
+            "message": "ya terminaste la tarea"
+          },
+          {
+            "userName": "Miles Morales",
+            "message": "aun sigo trabajando"
+          }
+        ],
+        "items": {
+          "$ref": "#/components/schemas/messages_inner"
+        }
+      },
+      "messages_inner": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
 }

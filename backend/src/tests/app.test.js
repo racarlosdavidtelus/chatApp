@@ -12,7 +12,6 @@ describe(' test backend chatApp ',()=>{
         expect(response.body).toEqual([]);
         expect(response.statusCode).toBe(200);
         expect(response.body).not.toBe({})
-
     });
 
     it('tests DELETE /messages endpoint', async() => {

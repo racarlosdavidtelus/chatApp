@@ -46,13 +46,13 @@ io.on('connection', (socket) => {
   socket.on('add user', data => {
     //console.log(data)
     usersSocket.set(socket.id,data);
-    console.log(`New user connected, ${socket.id}, total connected: ${usersSocket.size}`); 
+    console.log(`New user connected, total connected: ${usersSocket.size}`); 
   });
 
   socket.on("disconnect", () => {
     //console.log(socket.id);
     usersSocket.delete(socket.id)
-    console.log(`New user disconnected, ${socket.id}, total connected: ${usersSocket.size}`);
+    console.log(`User disconnected, total connected: ${usersSocket.size}`);
   });
 
   socket.on('chat message', msg => {
