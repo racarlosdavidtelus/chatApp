@@ -18,6 +18,6 @@ describe(' test backend chatApp ',()=>{
     it('tests DELETE /messages endpoint', async() => {
         const response = await request(server).delete("/messages");
         expect(response.statusCode).toBe(200);
-        expect(response.body.msg).toEqual('Messages delete');
+        expect(response.body).toEqual([]);
     });
 })

@@ -15,7 +15,8 @@
     "cors": "^2.8.5",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "socket.io": "^4.1.2"
+    "socket.io": "^4.1.2",
+    "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
     "jest": "^27.5.1",

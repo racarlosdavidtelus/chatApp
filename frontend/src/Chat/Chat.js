@@ -54,7 +54,7 @@ const Chat = () => {
                     <main className="container">
                         <ul id="messages">
                         { messages.map((item,index) => (   
-                            <li key={index}>{item.userName}: {item.message}</li>
+                            <li key={index}><b>{item.userName}</b>: {item.message}</li>
                         ))}
                         </ul>
                         

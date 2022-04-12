@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "DSU Chat",
-    "description": "Simple chat app on Express, Swagger, EJS, and Jest.",
+    "description": "Chat app with socket.io",
     "version": "0.0.1"
   },
   "servers": [

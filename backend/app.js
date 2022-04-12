@@ -9,6 +9,9 @@ const io = require('socket.io')(http, {
   }
 });
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
 const usersSocket = new Map();
 let content = [];
 let messages = [];
@@ -18,6 +21,8 @@ let lastId = 0;
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 app.use(cors())
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // Templating engine setup
 app.set("view engine", "ejs");
 app.set('views', __dirname + '/views');
@@ -33,7 +38,7 @@ app.get("/messages",(req,res) =>{
 
 app.delete("/messages",(req,res) =>{ 
   messages = [];
-  res.status(200).send({msg: "Messages delete"})
+  res.status(200).send([])
 })
 
 io.on('connection', (socket) => {
