@@ -65,7 +65,7 @@ function UserName() {
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closebutton>
-            <Modal.Title>Enter your name user name</Modal.Title>
+            <Modal.Title>Enter your new user name</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           <div className="row g-3 align-items-center">
