@@ -43,7 +43,7 @@ io.on('connection', (socket) => {
 
   socket.on('add user', data => {
     //console.log(data)
-    usersSocket.set(socket.id,data);
+    usersSocket.set(socket.id,data); 
     console.log(`New user connected, total connected: ${usersSocket.size}`); 
   });
 
