@@ -13,9 +13,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
 const usersSocket = new Map();
-let content = [];
-let messages = [];
-let lastId = 0;
+const {saveMessage,deleteMessages,getMessages} = require('./src/content/memo');
 
 // Middlewares
 app.use(express.static(__dirname + '/public'));
@@ -33,11 +31,11 @@ app.get('/', (req, res) => {
 });
 
 app.get("/messages",(req,res) =>{
-  res.status(200).send(messages)
+  res.status(200).send(getMessages())
 })
 
 app.delete("/messages",(req,res) =>{ 
-  messages = [];
+  deleteMessages()
   res.status(200).send([])
 })
 
@@ -57,7 +55,7 @@ io.on('connection', (socket) => {
 
   socket.on('chat message', msg => {
     //console.log(msg)
-    messages.push(msg)
+    saveMessage(msg)
     io.emit('chat message', msg);
   });
 });
@@ -66,5 +64,3 @@ io.on('connection', (socket) => {
 http.listen(2000, () => {
   console.log("Listening on port 2000");
 });
-
-module.exports = app;
