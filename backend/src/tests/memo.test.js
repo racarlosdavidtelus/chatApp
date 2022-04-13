@@ -7,11 +7,12 @@ describe(' test memory ',()=>{
         expect(messages.saveMessage({ userName: "Miles Morales", message: "hola, Carlos"})).toBe("message added")
         expect(messages.saveMessage({ userName: "Carlos David", message: "ya terminaste la tarea"})).toBe("message added")
         expect(messages.saveMessage({ userName: "Miles Morales", message: "ok,gracias"})).toBe("message added")
-        expect(messages.getMessages().length).toBe(3);
+        expect(messages.getMessages().length).toBe(3); 
     });
 
-    it('matches if the userName of the object in position 2 is Miles Morales', () => {
+    it('matches if the userName of the object in position 2 is Miles Morales and message is ok,gracias', () => {
         expect(messages.getMessages()[2].userName).toEqual("Miles Morales");
+        expect(messages.getMessages()[2].message).toEqual("ok,gracias");
     });
 
     it('tests delete messages', async() => {
