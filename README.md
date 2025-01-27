@@ -29,3 +29,5 @@ To change the username, just click on the user's name, an input will be displaye
 
 ## Test with Jest
 ![Alt text](Img/14.png)
+
+## New
